@@ -50,3 +50,16 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Testing
+
+From the repository root, install dependencies and run the backend tests:
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 -m pytest tests/ -v
+```
+
+Tests live in `tests/` and use pytest with FastAPI's `TestClient`; no running
+server is required. Each test follows Arrange-Act-Assert, and fixtures restore
+the in-memory activity data after every test, including failed tests.
